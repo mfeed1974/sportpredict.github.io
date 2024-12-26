@@ -2,6 +2,24 @@
 <html>
 <head>
     <title>CSV Processor</title>
+    <style>
+        #columnSelector {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            padding: 20px;
+            max-width: 100%;
+        }
+        .column-option {
+            display: inline-flex;
+            align-items: center;
+            margin: 5px;
+            white-space: nowrap;
+        }
+        .column-option label {
+            margin-left: 5px;
+        }
+    </style>
 </head>
 <body>
     <input type="file" id="csvInput" accept=".csv" />
