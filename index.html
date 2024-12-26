@@ -13,6 +13,14 @@
             align-items: center;
             min-height: 100vh;
             margin: 0;
+            font-size: 80%; /* Minden szöveg 20%-kal kisebb */
+        }
+
+        h1 {
+            color: #4CAF50;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
 
         .container {
@@ -22,15 +30,28 @@
             text-align: center;
         }
 
-        #csvInput {
-            background-color: #2d2d2d;
-            color: #ffffff;
-            padding: 12px;
-            border: 2px solid #4CAF50;
+        input[type="file"] {
+            display: none;
+        }
+
+        .file-upload-label {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 24px;
+            border: none;
             border-radius: 5px;
-            margin: 20px 0;
-            width: 300px;
+            font-size: 16px;
             cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 20px 0;
+            display: inline-block;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .file-upload-label:hover {
+            background-color: #45a049;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
         }
 
         #processButton {
@@ -89,24 +110,12 @@
             height: 16px;
             cursor: pointer;
         }
-
-        input[type="checkbox"]:hover {
-            transform: scale(1.1);
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                width: 95%;
-            }
-            
-            #csvInput {
-                width: 90%;
-            }
-        }
     </style>
 </head>
 <body>
     <div class="container">
+        <h1>CSV Processor</h1>
+        <label class="file-upload-label" for="csvInput">Choose File</label>
         <input type="file" id="csvInput" accept=".csv" />
         <div id="columnSelector"></div>
         <button id="processButton">Process CSV</button>
